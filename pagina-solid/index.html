@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página educativa sobre los cinco principios SOLID de ingeniería de software.">
+    <title>Principios SOLID | Ingeniería de Software</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="#inicio">SOLID<span>DEV</span></a>
+
+        <nav aria-label="Navegación principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#principios">Principios</a>
+            <a href="#ejemplos">Ejemplos</a>
+            <a href="#importancia">Importancia</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <span class="etiqueta">INGENIERÍA DE SOFTWARE</span>
+            <h1>Diseña mejor.<br><span>Programa mejor.</span></h1>
+            <p>
+                Descubre los cinco principios SOLID y aprende cómo
+                construir software limpio, flexible y fácil de mantener.
+            </p>
+            <a class="boton" href="#principios">Explorar principios ↓</a>
+        </section>
+
+        <section class="seccion" id="principios">
+            <div class="encabezado">
+                <span class="subtitulo">FUNDAMENTOS</span>
+                <h2>Los cinco principios SOLID</h2>
+                <p>Selecciona una tarjeta para conocer su significado.</p>
+            </div>
+
+            <div class="contenedor-tarjetas">
+                <article class="tarjeta">
+                    <span class="letra">S</span>
+                    <h3>Single Responsibility</h3>
+                    <h4>Responsabilidad única</h4>
+                    <p>Una clase debe tener una sola razón para cambiar.</p>
+                    <button class="boton-detalle" data-principio="s">
+                        Ver explicación
+                    </button>
+                    <div class="detalle" id="detalle-s" hidden>
+                        <p>Separa las responsabilidades para que los cambios
+                        en una función no afecten otras partes del sistema.</p>
+                        <pre><code>class Factura:
+    def calcular_total(self):
+        return 100</code></pre>
+                    </div>
+                </article>
+
+                <article class="tarjeta">
+                    <span class="letra">O</span>
+                    <h3>Open/Closed</h3>
+                    <h4>Abierto/cerrado</h4>
+                    <p>Permite extender el software sin modificar
+                    innecesariamente el código existente.</p>
+                    <button class="boton-detalle" data-principio="o">
+                        Ver explicación
+                    </button>
+                    <div class="detalle" id="detalle-o" hidden>
+                        <p>Por ejemplo, puedes agregar un nuevo método
+                        de pago mediante una implementación adicional.</p>
+                        <pre><code>class Pago:
+    def procesar(self, cantidad):
+        raise NotImplementedError</code></pre>
+                    </div>
+                </article>
+
+                <article class="tarjeta">
+                    <span class="letra">L</span>
+                    <h3>Liskov Substitution</h3>
+                    <h4>Sustitución de Liskov</h4>
+                    <p>Las implementaciones derivadas deben respetar
+                    el comportamiento esperado de su tipo base.</p>
+                    <button class="boton-detalle" data-principio="l">
+                        Ver explicación
+                    </button>
+                    <div class="detalle" id="detalle-l" hidden>
+                        <p>Una implementación debe poder sustituir a otra
+                        compatible sin romper las expectativas del programa.</p>
+                    </div>
+                </article>
+
+                <article class="tarjeta">
+                    <span class="letra">I</span>
+                    <h3>Interface Segregation</h3>
+                    <h4>Segregación de interfaces</h4>
+                    <p>Es preferible utilizar interfaces pequeñas y específicas.</p>
+                    <button class="boton-detalle" data-principio="i">
+                        Ver explicación
+                    </button>
+                    <div class="detalle" id="detalle-i" hidden>
+                        <p>Una impresora sencilla no debería implementar
+                        una operación de escaneo que no puede realizar.</p>
+                    </div>
+                </article>
+
+                <article class="tarjeta">
+                    <span class="letra">D</span>
+                    <h3>Dependency Inversion</h3>
+                    <h4>Inversión de dependencias</h4>
+                    <p>Los módulos deben depender de abstracciones,
+                    no de implementaciones concretas.</p>
+                    <button class="boton-detalle" data-principio="d">
+                        Ver explicación
+                    </button>
+                    <div class="detalle" id="detalle-d" hidden>
+                        <p>Un procesador de pagos puede trabajar con una
+                        interfaz común en lugar de depender de una
+                        pasarela de pago específica.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="seccion" id="ejemplos">
+            <div class="encabezado">
+                <span class="subtitulo">APLICACIÓN PRÁCTICA</span>
+                <h2>SOLID en un proyecto real</h2>
+                <p>Imagina que desarrollas una tienda virtual.</p>
+            </div>
+
+            <div class="panel">
+                <h3>Ejemplo: sistema de pagos</h3>
+                <ul>
+                    <li><strong>S:</strong> separar pedidos, facturas y notificaciones.</li>
+                    <li><strong>O:</strong> agregar métodos de pago sin reescribir el procesador.</li>
+                    <li><strong>L:</strong> respetar el contrato de cada método de pago.</li>
+                    <li><strong>I:</strong> dividir interfaces según las operaciones necesarias.</li>
+                    <li><strong>D:</strong> depender de una abstracción para procesar pagos.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="seccion" id="importancia">
+            <div class="encabezado">
+                <span class="subtitulo">CALIDAD DEL SOFTWARE</span>
+                <h2>¿Por qué es importante SOLID?</h2>
+            </div>
+
+            <div class="contenedor-tarjetas">
+                <article class="tarjeta">
+                    <h3>Mantenibilidad</h3>
+                    <p>Facilita corregir errores y actualizar funcionalidades.</p>
+                </article>
+                <article class="tarjeta">
+                    <h3>Escalabilidad</h3>
+                    <p>Ayuda a incorporar nuevas características.</p>
+                </article>
+                <article class="tarjeta">
+                    <h3>Testabilidad</h3>
+                    <p>Facilita probar componentes de forma independiente.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>SOLID DEV · Recurso educativo de ingeniería de software</p>
+    </footer>
+</body>
+</html>
